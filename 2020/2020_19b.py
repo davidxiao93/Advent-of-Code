@@ -535,7 +535,8 @@ while len(unexpanded_rules) != last_len:
 # Additionally, all valid values of either rule 42 or 31 are 8 chars long
 
 def is_valid(s: str):
-    if len(s) % 8 != 0:
+    blocks = len(next(iter(expanded_rules[42])))
+    if len(s) % blocks != 0:
         # a valid string must be formed of some number of blocks of 8 chars
         return False
 
@@ -544,16 +545,16 @@ def is_valid(s: str):
 
     # count how many times a block of 8 chars at the start of s fits into rule 42
     count_42 = 0
-    while s[:8] in rule_42:
+    while s[:blocks] in rule_42:
         count_42 += 1
-        s = s[8:]
+        s = s[blocks:]
 
     # after the blocks of rule 42, now comes rule 31
     # count how many times a block of 8 chars now at the start of s fits into rule 31
     count_31 = 0
-    while s[:8] in rule_31:
+    while s[:blocks] in rule_31:
         count_31 += 1
-        s = s[8:]
+        s = s[blocks:]
 
     if len(s) != 0:
         # If there are any left over characters, then s did not match the pattern
