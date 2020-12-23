@@ -1,4 +1,3 @@
-from typing import List
 input = """137826495"""
 
 cups = [int(x) for x in input]
@@ -34,7 +33,6 @@ class Cups:
         picked_up_head = self.current_node.next
         self.current_node.next = self.current_node.next.next.next.next
         picked_up_values = [picked_up_head.data, picked_up_head.next.data, picked_up_head.next.next.data]
-        # print("picked up", picked_up_values)
         # pick destination value
         destination_value = self.current_node.data - 1
         if destination_value < self.min_cup:
@@ -45,9 +43,6 @@ class Cups:
                 destination_value = self.max_cup
         # find destination cup
         destination_cup = self.data_to_node[destination_value]
-        # while destination_cup.data != destination_value:
-        #     destination_cup = destination_cup.next
-        # print("destination", destination_cup.data)
         # place cups back
         picked_up_head.next.next.next = destination_cup.next
         destination_cup.next = picked_up_head
@@ -61,27 +56,9 @@ class Cups:
             row.append(i.data)
             i = i.next
         print(",".join([str(x) for x in row]))
-#
-# def do_round(cups: List[int]) -> List[int]:
-#     # current cup is always at the front
-#     current_cup = cups[0]
-#     moved_cups = cups[1:4]
-#     found = 0
-#     find_value = current_cup - 1
-#     if find_value < min(cups):
-#         find_value = max(cups)
-#     while not found:
-#         new_index = cups.index(find_value)
-#         if new_index >= 4:
-#             found = new_index
-#         else:
-#             find_value -= 1
-#             if find_value < min(cups):
-#                 find_value = max(cups)
-#     return cups[4: found+1] + moved_cups + cups[found + 1:] + [cups[0]]
+
 
 cs = Cups(cups, 1000000)
-
 for i in range(10000000):
     cs.do_round()
 print(cs.data_to_node[1].next.data * cs.data_to_node[1].next.next.data)
