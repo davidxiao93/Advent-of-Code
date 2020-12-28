@@ -11,6 +11,14 @@ target = 150
 # input = [5, 5, 5]
 # target = 10
 
+"""
+Note from future David:
+The idea behind this was to somehow mark each container slightly differently. I used a small fraction
+for each distinct container. That's what the deduplicate_input method is
+
+In hindsight, recursion would have been a much better idea
+"""
+
 def deduplicate_input(l):
     mapping = {}
     new_l = []
@@ -18,7 +26,7 @@ def deduplicate_input(l):
     for i in l:
         if i not in mapping:
             mapping[i] = 0
-        new_l.append(i + mapping[i] / 100 )
+        new_l.append(i + mapping[i] / factor )
 
         mapping[i] += 1
     return new_l
@@ -39,7 +47,6 @@ def build_mapping():
     mapping = {}
 
     for t in range(target + 1):
-        print("target", t)
         if t not in mapping:
             mapping[t] = []
         for c in l:
@@ -55,14 +62,13 @@ def build_mapping():
                         continue
                     mapping[t].append([c] + p)
         mapping[t] = deduplicate_list_list(mapping[t])
-        print(len(mapping[t]))
     return mapping
 
 result = build_mapping()[target]
 
 
 
-print(deduplicate_list_list(result))
+print(len(deduplicate_list_list(result)))
 
 
 

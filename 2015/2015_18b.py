@@ -160,7 +160,6 @@ def pretty_print_grid(grid):
         ]))
 
 for i in range(target):
-    print("after", i)
     update_grid(grid)
 
 # pretty_print_grid(grid)

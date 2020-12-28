@@ -1,8 +1,12 @@
 import itertools
 
-boss_health = 109
-boss_attack = 8
-boss_defend = 2
+input = """Hit Points: 109
+Damage: 8
+Armor: 2"""
+
+boss_health = int(input.splitlines()[0].split()[-1])
+boss_attack = int(input.splitlines()[1].split()[-1])
+boss_defend = int(input.splitlines()[2].split()[-1])
 
 player_health = 100
 player_attack = 0
@@ -39,7 +43,6 @@ k > (109 - damage(player_attack, 2)) / damage(player_attack, 2)
 
 def player_wins(pa, pd, ph=player_health, bh=boss_health, ba=boss_attack, bd=boss_defend):
     return (bh - damage(pa, bd)) * damage(ba, pd) < ph * damage(pa, bd)
-print(player_wins(8, 0))
 
 weapons = {
     ("Dagger", 8, 4, 0),
@@ -106,4 +109,3 @@ for combo in all_combinations:
             winner = combo
 
 print(lowest_cost)
-print(winner)

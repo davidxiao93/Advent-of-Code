@@ -1,9 +1,8 @@
 import hashlib
 
-input = "yzbqklnj"
+input = """yzbqklnj"""
 
 def success(number):
-    print("testing ", number)
     return hashlib.md5((input + str(number)).encode('utf-8')).hexdigest().startswith("000000")
 
 i = 0

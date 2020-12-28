@@ -545,4 +545,4 @@ for line in input.splitlines():
 
 potential_sues = [sue for sue in sues if sue.matches()]
 
-print([sue.id for sue in potential_sues])
+print([sue.id for sue in potential_sues][0])

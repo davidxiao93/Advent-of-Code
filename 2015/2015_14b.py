@@ -37,18 +37,18 @@ class Reindeer:
             if self.time_since_last_change >= self.resting_time:
                 self.time_since_last_change = 0
                 self.is_flying = True
-        print(self.name,
-              "is",
-              "flying" if self.is_flying else "resting",
-              "and has travelled",
-              str(self.distance_covered),
-              "after",
-              str(self.current_time),
-              "seconds"
-              )
+        # print(self.name,
+        #       "is",
+        #       "flying" if self.is_flying else "resting",
+        #       "and has travelled",
+        #       str(self.distance_covered),
+        #       "after",
+        #       str(self.current_time),
+        #       "seconds"
+        #       )
 
     def score_point(self):
-        print(self.name, "has scored a point")
+        # print(self.name, "has scored a point")
         self.points += 1
 
 reindeers = []
@@ -70,5 +70,5 @@ for i in range(t):
         if r.distance_covered == furthest:
             r.score_point()
 
-print(sorted([r.points for r in reindeers]))
+print(max([r.points for r in reindeers]))
 

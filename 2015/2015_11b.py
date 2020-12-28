@@ -1,6 +1,6 @@
 import string
 
-input = "cqjxxyzz"
+input = """cqjxxyzz"""
 
 
 def has_increasing_digits(l):
@@ -66,7 +66,6 @@ def list_to_string(l):
 l = string_to_list(input)
 l = increment(l)
 while not is_valid(l):
-    print("checking", l)
     increment(l)
 
 print(list_to_string(l))

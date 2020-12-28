@@ -299,8 +299,6 @@ input = r""" "qxfcsmh"
 "wtoodejqmrrgslhvnk\"pi\"ldnogpth"
 "njro\x68qgbx\xe4af\"\\suan" """
 
-# input = r""" "aaa\"aaa" """
-# input = r""" "\x2a" """
 
 import re
 
@@ -317,6 +315,5 @@ for l in input.split("\n"):
 
     count += code
     count -= memory
-    print(line, code, memory)
 
 print(count)

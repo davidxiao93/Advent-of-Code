@@ -299,9 +299,6 @@ input = r""" "qxfcsmh"
 "wtoodejqmrrgslhvnk\"pi\"ldnogpth"
 "njro\x68qgbx\xe4af\"\\suan" """
 
-# input = r""" "aaa\"aaa" """
-# input = r""" "\x2a" """
-
 import re
 
 count = 0
@@ -317,6 +314,5 @@ for l in input.split("\n"):
 
     count += encoded
     count -= code
-    print(line, encoded, code)
 
 print(count)

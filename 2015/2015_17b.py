@@ -18,7 +18,7 @@ def deduplicate_input(l):
     for i in l:
         if i not in mapping:
             mapping[i] = 0
-        new_l.append(i + mapping[i] / 100 )
+        new_l.append(i + mapping[i] / factor )
 
         mapping[i] += 1
     return new_l
@@ -39,7 +39,6 @@ def build_mapping():
     mapping = {}
 
     for t in range(target + 1):
-        print("target", t)
         if t not in mapping:
             mapping[t] = []
         for c in l:
@@ -55,7 +54,6 @@ def build_mapping():
                         continue
                     mapping[t].append([c] + p)
         mapping[t] = deduplicate_list_list(mapping[t])
-        print(len(mapping[t]))
     return mapping
 
 result = build_mapping()[target]

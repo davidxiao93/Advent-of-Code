@@ -1,8 +1,16 @@
 from collections import namedtuple
 from typing import Optional
 
-boss_health = 58
-boss_attack = 9
+input = """Hit Points: 58
+Damage: 9"""
+
+"""
+Note from future David:
+Be warned that this one can take time. It takes 5 minutes on my laptop.
+"""
+
+boss_health = int(input.splitlines()[0].split()[-1])
+boss_attack =int(input.splitlines()[1].split()[-1])
 
 player_health = 50
 player_mana = 500
@@ -244,7 +252,6 @@ class State:
 
 from copy import deepcopy
 
-# candidates = [State()]
 
 c = {
     0: [State()]
@@ -279,17 +286,17 @@ while not is_found:
         continue
     except WinException:
         is_found = next_candidate
-        print("Winning Combo:", ", ".join([spell.name for spell in is_found.spells_applied]))
-        print("Scoring", score_spells(is_found.spells_applied))
-        end = time.time()
-        print(end - start)
+        # print("Winning Combo:", ", ".join([spell.name for spell in is_found.spells_applied]))
+        print(score_spells(is_found.spells_applied))
+        # end = time.time()
+        # print(end - start)
         exit(0)
 
-    if counter % 500 == 0:
-        print("Checked:", ", ".join(next_candidate.get_spell_names()))
-        print("This scored:", next_candidate.get_score())
-        print("time taken", time.time() - start)
-        print("")
+    # if counter % 500 == 0:
+    #     print("Checked:", ", ".join(next_candidate.get_spell_names()))
+    #     print("This scored:", next_candidate.get_score())
+    #     print("time taken", time.time() - start)
+    #     print("")
 
     # battle not over yet!
     for spell in [magic_missile, drain]:

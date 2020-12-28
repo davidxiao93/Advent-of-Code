@@ -1,4 +1,4 @@
-input = 36000000
+input = """36000000"""
 
 import math
 
@@ -13,10 +13,11 @@ def num_presents(h):
 
 
 house = 1
+target = int(input)
 while True:
     count = num_presents(house)
-    print(house, count)
-    if count > input:
+    if count > target:
+        print(house)
         break
 
     house += 1

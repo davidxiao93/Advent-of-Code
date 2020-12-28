@@ -97,4 +97,4 @@ current_index = 0
 while current_index < len(instructions):
     current_index = process(instructions, current_index)
 
-print(registers)
+print(registers['b'])
