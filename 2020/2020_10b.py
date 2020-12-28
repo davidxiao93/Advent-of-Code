@@ -169,7 +169,7 @@ while len(values) != 0:
     all_groups.append(values[:counter + 2])
     values = values[counter:]
 
-print(all_groups)
+# print(all_groups)
 
 patterns = {}
 for group in all_groups:
@@ -187,7 +187,7 @@ for group in all_groups:
 patterns are like (3, 1, 1, 3)
 
 """
-print(patterns)
+# print(patterns)
 
 
 # mapping from number of 1-diffs to possibilities

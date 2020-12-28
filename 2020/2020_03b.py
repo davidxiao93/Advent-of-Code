@@ -352,7 +352,7 @@ for slope in slopes:
         pos_x += slope[0]
         pos_x = pos_x % len(map[0])
         pos_y += slope[1]
-    print("slope", slope, "found", tree_count)
+    # print("slope", slope, "found", tree_count)
     result *= tree_count
 
 print(result)

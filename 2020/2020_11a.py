@@ -159,5 +159,5 @@ seat_changed = True
 while seat_changed:
     grid, seat_changed = step_grid(grid)
 
-pretty_print(grid)
+# pretty_print(grid)
 print(total_occupied(grid))

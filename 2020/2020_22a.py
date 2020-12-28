@@ -2,58 +2,58 @@ from functools import reduce
 from typing import List
 
 input = """Player 1:
-28
-13
-25
-16
-38
 3
-14
-6
-29
-2
-47
-20
-35
-43
-30
-39
-21
 42
+4
+25
+14
+36
+32
+18
+33
+10
+35
 50
-48
-23
-11
+16
+31
 34
-24
+46
+9
+6
 41
+7
+15
+45
+30
+27
+49
 
 Player 2:
-27
-37
-9
-10
-17
-31
-19
-33
-40
-12
-32
-1
-18
-36
-49
-46
-26
-4
-45
 8
-15
-5
-44
+11
+47
+21
+17
+39
+29
+43
+23
+28
+13
 22
-7"""
+5
+20
+44
+38
+26
+37
+2
+24
+48
+12
+19
+1
+40"""
 
 def player_str_to_deck(player_str) -> List[int]:
     return [int(x) for x in player_str.splitlines()[1:]]
@@ -71,9 +71,9 @@ def play(deck0: List[int], deck1: List[int]) -> int:
             # making the assumption that all deck cards are unique
             deck0.append(c0)
             deck0.append(c1)
-    print(rounds)
-    print(deck0)
-    print(deck1)
+    # print(rounds)
+    # print(deck0)
+    # print(deck1)
     return reduce(
         lambda a, z: a + z[0]*z[1],
         zip(
