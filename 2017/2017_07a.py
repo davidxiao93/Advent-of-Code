@@ -1208,4 +1208,4 @@ for line in input.splitlines():
     left_side.add(left.split()[0].strip())
 
 in_left_not_right = left_side - right_side
-print(in_left_not_right)
+print(next(iter(in_left_not_right)))

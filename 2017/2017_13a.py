@@ -67,7 +67,7 @@ while time <= max(depth_to_range):
     time += 1
     if time in depth_to_range:
         if scanner_pos(time, depth_to_range[time]) == 0:
-            print("caught at", time)
+            # print("caught at", time)
             severity += time * depth_to_range[time]
 
 print(severity)

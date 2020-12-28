@@ -140,8 +140,9 @@ while 0 <= current_instruction < len(instructions) and iterations < 8000:
     iterations += 1
     instruction = instructions[current_instruction]
 
-    print(registers)
-    print(current_instruction, instruction)
+    # print(registers)
+    # print(current_instruction, instruction)
+
 
     if current_instruction == 28:
         registers['h'] += 1 if not is_prime(registers['b']) else 0
@@ -162,8 +163,8 @@ while 0 <= current_instruction < len(instructions) and iterations < 8000:
         continue
 
     if current_instruction == 11:
-        print(registers)
-        print(current_instruction, instruction)
+        # print(registers)
+        # print(current_instruction, instruction)
         registers['e'] = registers['b']
         if registers['d'] > 1 and registers['b'] % registers['d'] == 0:
             registers['f'] = 0
@@ -186,7 +187,6 @@ while 0 <= current_instruction < len(instructions) and iterations < 8000:
         else:
             current_instruction += 1
 
-print("fin")
-
+print(registers['h'])
 
 

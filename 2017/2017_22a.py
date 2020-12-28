@@ -86,6 +86,6 @@ for i in range(10000):
         infected.add(current_position)
     current_position = add_point(current_position, directions[current_direction])
 
-pretty_print(infected, current_position, current_direction)
+# pretty_print(infected, current_position, current_direction)
 
 print(infections_caused)

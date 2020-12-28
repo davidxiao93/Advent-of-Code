@@ -5,7 +5,7 @@ Point = namedtuple("Point", ["x", "y"])
 def add_point(p, q):
     return Point(p.x + q.x, p.y + q.y)
 
-input = "uugsqrei"
+input = """uugsqrei"""
 
 # input = "flqrgnkx"
 

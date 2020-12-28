@@ -213,7 +213,7 @@ def number_lights_on(grid):
 grid = [".#.", "..#", "###"]
 for i in range(target):
     grid = enhance(grid)
-pretty_print_grid(grid)
+# pretty_print_grid(grid)
 
 print(str(number_lights_on(grid)))
 

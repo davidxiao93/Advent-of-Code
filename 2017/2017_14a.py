@@ -2,7 +2,7 @@ from typing import List
 from functools import reduce
 
 
-input = "uugsqrei"
+input = """uugsqrei"""
 
 # input = "flqrgnkx"
 

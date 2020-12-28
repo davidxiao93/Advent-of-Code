@@ -1,5 +1,8 @@
-inputA = 618
-inputB = 814
+input = """Generator A starts with 618
+Generator B starts with 814"""
+
+inputA = int(input.splitlines()[0].split()[-1])
+inputB = int(input.splitlines()[1].split()[-1])
 
 # inputA = 65
 # inputB = 8921
@@ -16,7 +19,6 @@ a = inputA
 b = inputB
 matches = 0
 for i in range(40000000):
-    print(i)
     a = generate_next(a, factorA)
     b = generate_next(b, factorB)
     # bottom 16 bits match if they ae equal modulo 65536 (2^16)

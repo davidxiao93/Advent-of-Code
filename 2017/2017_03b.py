@@ -1,4 +1,6 @@
-input = 325489
+input = """325489"""
+
+input = int(input)
 
 from collections import namedtuple
 

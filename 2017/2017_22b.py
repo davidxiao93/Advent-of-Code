@@ -81,7 +81,7 @@ def pretty_print(infected, current_position, current_direction):
 infections_caused = 0
 for i in range(10000000):
     # pretty_print(infected, current_position, current_direction)
-    print("----", i)
+    # print("----", i)
     s = get_infected_state(current_position)
     if s == 0: # clean
         current_direction = (current_direction - 1) % 4
@@ -100,7 +100,7 @@ for i in range(10000000):
     current_position = add_point(current_position, directions[current_direction])
     # input("Press Enter to continue...")
 
-pretty_print(infected, current_position, current_direction)
+# pretty_print(infected, current_position, current_direction)
 
 print(infections_caused)
 

@@ -69,8 +69,6 @@ while 0 <= current_instruction < len(instructions):
         else:
             current_instruction += 1
 
-print("fin")
-
 print(mul_invoked)
 
 

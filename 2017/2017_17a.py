@@ -1,4 +1,5 @@
-input = 301
+input = """301"""
+input = int(input)
 
 # input = 3
 

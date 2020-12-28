@@ -75,7 +75,7 @@ caught = True
 d = -1
 while caught:
     d += 1
-    print("testing", d)
+    # print("testing", d)
     caught = is_caught(d)
 print(d)
 

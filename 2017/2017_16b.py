@@ -55,7 +55,6 @@ while i < 1000000000:
         s = dance(instructions, s)
         i += 1
     else:
-        print("loop found")
         loop_size = i - dance_map[s]
         loop_offset = dance_map[s]
         break

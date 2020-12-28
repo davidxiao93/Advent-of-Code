@@ -1104,15 +1104,15 @@ def calc_earliest_collision(particles: Set[Particle]) -> Tuple[Optional[int], Op
 
 collision_time, collision_position = calc_earliest_collision(particles)
 while collision_time is not None:
-    print("Collides at t =", collision_time)
+    # print("Collides at t =", collision_time)
     particles_to_remove = set()
     for p in particles:
         if p.get_position_at_time(collision_time) == collision_position:
             particles_to_remove.add(p)
-    print("Removed", len(particles_to_remove))
+    # print("Removed", len(particles_to_remove))
     for p in particles_to_remove:
         particles.remove(p)
-    print("Remaining", len(particles))
+    # print("Remaining", len(particles))
 
     collision_time, collision_position = calc_earliest_collision(particles)
 

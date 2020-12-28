@@ -1,4 +1,5 @@
-input = 301
+input = """301"""
+input = int(input)
 
 """
 After playing around with spinlock for a bit, not that the only time the value after 0 is changed
@@ -38,7 +39,7 @@ target = 50000000
 while i <= target:
 
     zero_index = 1 + ((zero_index - 1 - input) % i)
-    print(i, "\t", zero_index, "----" if i == zero_index else "")
+    # print(i, "\t", zero_index, "----" if i == zero_index else "")
     if i == zero_index:
         after_zero = i
 

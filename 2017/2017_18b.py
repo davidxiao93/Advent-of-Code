@@ -128,14 +128,14 @@ while True:
     p0.execute()
     p1.execute()
     if p0.is_terminated and p1.is_terminated:
-        print("both programs terminated")
+        # print("both programs terminated")
         break
     if p0.is_blocked and p1.is_blocked:
-        print("both programs blocked")
+        # print("both programs blocked")
         break
 
-print("end")
-print("Program 1 sent", p1_sent)
+# print("end")
+print(p1_sent)
 
 
 

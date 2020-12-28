@@ -29,7 +29,7 @@ simplifications = {
 has_changed = True
 while has_changed:
     has_changed = False
-    print(direction_steps)
+    # print(direction_steps)
     for (a, b), rs in simplifications.items():
         if direction_steps[a] > 0 and direction_steps[b] > 0:
             has_changed = True
@@ -40,7 +40,7 @@ while has_changed:
     if sum(direction_steps.values()) == 0:
         break
 
-print(direction_steps)
+# print(direction_steps)
 print(sum(direction_steps.values()))
 
 
