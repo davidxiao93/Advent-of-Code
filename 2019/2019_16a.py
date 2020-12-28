@@ -16,7 +16,6 @@ def do_round(vs):
     return nvs
 
 for i in range(100):
-    print(i)
     values = do_round(values)
 
 print("".join([str(x) for x in values[:8]]))

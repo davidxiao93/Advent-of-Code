@@ -185,7 +185,7 @@ while True:
         current_direction = (current_direction - 1) % 4
     current_position = add_point(current_position, directions[current_direction])
 
-print(len(painted_hull))
+# print(len(painted_hull))
 
 min_x = min(painted_hull.keys(), key = lambda p: p.x).x
 min_y = min(painted_hull.keys(), key = lambda p: p.y).y

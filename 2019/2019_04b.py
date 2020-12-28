@@ -1,5 +1,9 @@
+input = """109165-576723"""
+lower_bound = int(input.split("-")[0])
+upper_bound = int(input.split("-")[1])
+
 def is_valid(v):
-    if v < 109165 or v > 576723:
+    if v < lower_bound or v > upper_bound:
         return False
     v_list = list(str(v))
 
@@ -23,7 +27,7 @@ def is_valid(v):
     return True
 
 count = 0
-for i in range(109165, 576723 + 1):
+for i in range(lower_bound, upper_bound + 1):
     if is_valid(i):
         count += 1
 
