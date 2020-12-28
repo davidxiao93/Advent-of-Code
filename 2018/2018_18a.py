@@ -102,8 +102,8 @@ def score_grid(grid):
 for i in range(10):
     advance(grid)
 
-for row in grid:
-    print("".join(row))
+# for row in grid:
+#     print("".join(row))
 
 
 print(score_grid(grid))

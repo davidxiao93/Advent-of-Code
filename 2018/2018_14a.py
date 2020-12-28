@@ -1,4 +1,5 @@
-input = 793061
+input = """793061"""
+input = int(input)
 
 
 recipes = [3,7]

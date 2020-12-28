@@ -1,4 +1,5 @@
-serial = 9005
+input = """9005"""
+serial = int(input)
 
 grid_size = 300
 

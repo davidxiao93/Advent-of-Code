@@ -1334,7 +1334,7 @@ for r, s in combinations(rectangles, 2):
 
 ids_with_no_overlap = {r.id for r in rectangles} - ids_with_overlap
 
-print(ids_with_no_overlap)
+print(next(iter(ids_with_no_overlap)))
 
 
 

@@ -27,8 +27,8 @@ Infection:
 1214 units each with 14587 hit points (immune to cold) with an attack that does 16 radiation damage at initiative 9"""
 
 def printd(message):
-    print(message)
-    # pass
+    # print(message)
+    pass
 
 class Group:
     def __init__(self,

@@ -105,7 +105,7 @@ reached_end = False
 while not reached_end:
     (position, current_equipment), time_taken = pop_next(time_mapping)
     if position == target and current_equipment == TORCH:
-        print(f"Taken {time_taken} minute(s)")
+        print(time_taken)
         exit(0)
 
     if (position, current_equipment) in visited_states:

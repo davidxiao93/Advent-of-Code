@@ -22,7 +22,7 @@ shortest_len = None
 for c in units:
     s = input.replace(c, "").replace(c.upper(), "")
     l = len(reduce(s, units))
-    print("removing", c, "allowed reduction to", l)
+    # print("removing", c, "allowed reduction to", l)
     if shortest_len is None or l < shortest_len:
         shortest_len = l
 
