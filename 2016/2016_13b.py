@@ -4,7 +4,8 @@ from collections import namedtuple
 
 Point = namedtuple("Point", ["x", "y"])
 
-input = 1350
+input = """1350"""
+input = int(input)
 start = Point(x=1, y=1)
 target_steps = 50
 

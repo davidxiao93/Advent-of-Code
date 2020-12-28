@@ -38,6 +38,7 @@ def move_up(current_pos):
 def get_key():
     return (2 - current_pos.y) * 3 + current_pos.x + 1
 
+answer = ""
 for line in input.splitlines():
     for c in line:
         if c == "L":
@@ -48,7 +49,8 @@ for line in input.splitlines():
             current_pos = move_up(current_pos)
         if c == "D":
             current_pos = move_down(current_pos)
+    answer += str(get_key())
 
-    print(str(get_key()))
+print(answer)
 
 

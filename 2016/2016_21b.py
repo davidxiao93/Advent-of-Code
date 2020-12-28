@@ -173,8 +173,6 @@ def undo_move(s, y, x):
 
 password = {scrambled}
 for line in reversed(input.splitlines()):
-    print(password)
-    print(line)
     words = line.split()
     if words[0] == "swap":
         if words[1] == "position":
@@ -202,5 +200,5 @@ for line in reversed(input.splitlines()):
         print("unknown instruction")
         exit(1)
 
-print(password)
+print(next(iter(password)))
 

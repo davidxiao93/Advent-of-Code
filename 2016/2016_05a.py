@@ -1,6 +1,6 @@
 import hashlib
 
-input = "wtnhxymk"
+input = """wtnhxymk"""
 
 
 def hash(key, n):
@@ -10,7 +10,6 @@ index = 0
 password = ""
 while len(password) != 8:
     h = hash(input, index)
-    print(index)
     if h.startswith("00000"):
         password += h[5]
     index += 1

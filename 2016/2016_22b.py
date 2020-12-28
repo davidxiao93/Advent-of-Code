@@ -1066,7 +1066,7 @@ for y in range(y_size):
         if min_size > size_grid[p]:
             min_size = size_grid[p]
 
-print(max_used < min_size) # prints true so is safe
+assert(max_used < min_size) # safe
 
 
 def pretty_print(used_grid, size_grid):
@@ -1089,7 +1089,7 @@ def pretty_print(used_grid, size_grid):
                 print(". ", end="")
         print("")
 
-pretty_print(used_grid, size_grid)
+# pretty_print(used_grid, size_grid)
 
 
 print(49 + (x_size - 2) * 5 + 1)

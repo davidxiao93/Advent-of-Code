@@ -326,7 +326,7 @@ for value_instruction in value_instructions:
     give_bot_chip(bn, v)
 
 
-print(bot_comparisons[(17, 61)])
+print(bot_comparisons[(17, 61)][0])
 
 
 

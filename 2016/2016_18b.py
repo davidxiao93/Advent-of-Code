@@ -27,7 +27,6 @@ def build_next_row(last_row):
     return row_cache[last_row]
 
 for i in range(1, target_rows):
-    print("row", i)
     rows.append(build_next_row(rows[i - 1]))
 
 count = 0

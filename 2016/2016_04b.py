@@ -987,9 +987,6 @@ def is_real(s):
     return (ni_rs[0].replace("-", " "), id)
 
 
-# print(is_real("totally-real-room-200[decoy]"))
-#
-# exit()
 
 # yoinked from https://stackoverflow.com/a/8895517
 def caesar(plaintext, shift):
@@ -1005,8 +1002,9 @@ for line in input.splitlines():
         continue
     encrypted, id = real
     decrypted = caesar(encrypted, id%26)
-
-    print(decrypted, id)
+    if decrypted == "northpole object storage":
+        print(id)
+        break
 
 
 

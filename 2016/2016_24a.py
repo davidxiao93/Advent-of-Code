@@ -128,9 +128,9 @@ for i, j in combinations(positions.keys(), 2):
     distances[(i,j)] = shortest_distance(positions[i], positions[j], walls)
     distances[(j,i)] = distances[(i,j)]
 
-import pprint
-pp = pprint.PrettyPrinter(indent=4)
-pp.pprint(distances)
+# import pprint
+# pp = pprint.PrettyPrinter(indent=4)
+# pp.pprint(distances)
 
 
 # now bfs to find the shortest path to cover all positions
@@ -153,7 +153,7 @@ while shortest_path == 0:
             is_complete = False
 
     if is_complete:
-        print(path)
+        # print(path)
         shortest_path = length
         break
 

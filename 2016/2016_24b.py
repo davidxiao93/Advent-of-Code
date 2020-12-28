@@ -128,9 +128,9 @@ for i, j in combinations(positions.keys(), 2):
     distances[(i,j)] = shortest_distance(positions[i], positions[j], walls)
     distances[(j,i)] = distances[(i,j)]
 
-import pprint
-pp = pprint.PrettyPrinter(indent=4)
-pp.pprint(distances)
+# import pprint
+# pp = pprint.PrettyPrinter(indent=4)
+# pp.pprint(distances)
 
 
 # not to find the shortest tour
@@ -147,7 +147,7 @@ while shortest_path == 0:
     path, length = pop_next(step_mapping)
 
     if -1 in path:
-        print(path)
+        # print(path)
         shortest_path = length
         break
 

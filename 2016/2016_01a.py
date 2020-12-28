@@ -34,8 +34,6 @@ def move(cp: Point, d: int):
                  y=cp.y + d*directions[current_direction].y)
 
 
-seen_points = {current_pos}
-
 input = input.replace(",", "")
 
 for i in input.split():
@@ -48,12 +46,7 @@ for i in input.split():
         exit(1)
 
     d = int(i[1:])
-    for x in range(d):
-        current_pos = move(current_pos, 1)
-        if current_pos not in seen_points:
-            seen_points.add(current_pos)
-        else:
-            print(current_pos)
-            print(abs(current_pos.x) + abs(current_pos.y))
-            exit()
+    current_pos = move(current_pos, d)
+
+print(abs(current_pos.x) + abs(current_pos.y))
 

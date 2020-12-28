@@ -228,9 +228,6 @@ def rotate_column(grid, column, q):
     return grid
 
 for line in input.splitlines():
-    for row in grid:
-        print("".join(["#" if x == 1 else "." for x in row]))
-    print("----")
     s = line.split()
     if s[0] == "rect":
         a, b = s[1].split("x")
@@ -248,11 +245,10 @@ for line in input.splitlines():
         exit(1)
 
 for row in grid:
-    print("".join(["#" if x == 1 else "." for x in row]))
+    print("".join(["#" if x == 1 else " " for x in row]))
 
-count = 0
-for row in grid:
-    count += sum(row)
-
-print(count)
+"""
+Note from future David:
+I'm not OCRing this answer
+"""
 

@@ -39,9 +39,8 @@ while len(set_found_hashes) < 64:
     if triples is not None:
         for i in range(1, 1001):
             if contains_5_in_row(current_index + i, triples):
-                print(current_index)
                 set_found_hashes.add(current_index)
+                if len(set_found_hashes) == 64:
+                    print(current_index)
 
     current_index += 1
-
-print(len(set_found_hashes))

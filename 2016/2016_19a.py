@@ -1,4 +1,5 @@
-input = 3004953
+input = """3004953"""
+input = int(input)
 
 # input = 5
 
@@ -22,4 +23,4 @@ def reduce(elves):
 while len(elves) != 1:
     elves = reduce(elves)
 
-print("Elf", elves[0][0], "has", elves[0][1], "presents")
+print(elves[0][0])

@@ -147,8 +147,6 @@ def move(s, x, y):
 
 scrambled = password
 for line in input.splitlines():
-    print(scrambled)
-    print(line)
     words = line.split()
     if words[0] == "swap":
         if words[1] == "position":

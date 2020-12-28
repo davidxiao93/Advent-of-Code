@@ -15,7 +15,6 @@ def checksum(s: str):
 
 
 while len(input) < target:
-    print(len(input))
     input = dragon(input)
 
 input = input[:target]

@@ -4,7 +4,8 @@ from collections import namedtuple
 
 Point = namedtuple("Point", ["x", "y"])
 
-input = 1350
+input = """1350"""
+input = int(input)
 start = Point(x=1, y=1)
 target = Point(x=31, y=39)
 
@@ -57,7 +58,6 @@ directions = {
 
 while not is_end:
     (current_pos, num_steps), s = pop_next(score_mapping)
-    print(s, current_pos)
     if current_pos == target:
         is_end = num_steps
     for d in directions:
