@@ -1,15 +1,17 @@
 from typing import List, Tuple
 from collections import namedtuple
 
-input = """3,8,1001,8,10,8,105,1,0,0,21,38,63,80,105,118,199,280,361,442,99999,3,9,102,5,9,9,1001,9,3,9,1002,9,2,9,4,9,99,3,9,1001,9,4,9,102,4,9,9,101,4,9,9,102,2,9,9,101,2,9,9,4,9,99,3,9,1001,9,5,9,102,4,9,9,1001,9,4,9,4,9,99,3,9,101,3,9,9,1002,9,5,9,101,3,9,9,102,5,9,9,101,3,9,9,4,9,99,3,9,1002,9,2,9,1001,9,4,9,4,9,99,3,9,1002,9,2,9,4,9,3,9,1002,9,2,9,4,9,3,9,1001,9,2,9,4,9,3,9,1001,9,1,9,4,9,3,9,1002,9,2,9,4,9,3,9,1001,9,2,9,4,9,3,9,1002,9,2,9,4,9,3,9,1001,9,1,9,4,9,3,9,101,2,9,9,4,9,3,9,1001,9,1,9,4,9,99,3,9,102,2,9,9,4,9,3,9,1001,9,2,9,4,9,3,9,1002,9,2,9,4,9,3,9,1001,9,2,9,4,9,3,9,1001,9,1,9,4,9,3,9,1002,9,2,9,4,9,3,9,1002,9,2,9,4,9,3,9,1002,9,2,9,4,9,3,9,1002,9,2,9,4,9,3,9,101,1,9,9,4,9,99,3,9,101,1,9,9,4,9,3,9,102,2,9,9,4,9,3,9,101,1,9,9,4,9,3,9,102,2,9,9,4,9,3,9,1001,9,1,9,4,9,3,9,102,2,9,9,4,9,3,9,1001,9,1,9,4,9,3,9,1002,9,2,9,4,9,3,9,1001,9,2,9,4,9,3,9,101,2,9,9,4,9,99,3,9,1002,9,2,9,4,9,3,9,102,2,9,9,4,9,3,9,102,2,9,9,4,9,3,9,1002,9,2,9,4,9,3,9,1001,9,1,9,4,9,3,9,102,2,9,9,4,9,3,9,102,2,9,9,4,9,3,9,1002,9,2,9,4,9,3,9,1001,9,2,9,4,9,3,9,1001,9,1,9,4,9,99,3,9,1001,9,2,9,4,9,3,9,1001,9,2,9,4,9,3,9,101,1,9,9,4,9,3,9,101,2,9,9,4,9,3,9,1002,9,2,9,4,9,3,9,102,2,9,9,4,9,3,9,1001,9,1,9,4,9,3,9,1002,9,2,9,4,9,3,9,1001,9,1,9,4,9,3,9,101,1,9,9,4,9,99"""
-int_codes = [int(x) for x in input.split(",")]
+import file_loader
+
+input_string = file_loader.get_input()
+int_codes = [int(x) for x in input_string.split(",")]
 
 Param = namedtuple("Param", ["mode", "value"])
 
 opcodes = {
     1: (3, "add"),
     2: (3, "multiply"),
-    3: (1, "read-input"),
+    3: (1, "read-input_string"),
     4: (1, "write-output"),
     5: (2, "jump-if-true"),
     6: (2, "jump-if-false"),
@@ -70,7 +72,7 @@ class Computer:
             self.int_codes[params[2].value] = self._read_param(params[0]) + self._read_param(params[1])
         elif opcode == "multiply":
             self.int_codes[params[2].value] = self._read_param(params[0]) * self._read_param(params[1])
-        elif opcode == "read-input":
+        elif opcode == "read-input_string":
             if len(self.inputs_queue) == 0:
                 # Can't do anything now
                 return
@@ -105,7 +107,7 @@ for perm in permutations(range(5)):
     for i, p in enumerate(perm):
         # set phase setting
         computers[i].put_input(p)
-    # set first amp input signal
+    # set first amp input_string signal
     next_input = 0
     for i, c in enumerate(computers):
         c.put_input(next_input)

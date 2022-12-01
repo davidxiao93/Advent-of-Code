@@ -1,4 +1,6 @@
-input = """36000000"""
+import file_loader
+
+input_string = file_loader.get_input()
 
 import math
 
@@ -13,7 +15,7 @@ def num_presents(h):
 
 
 house = 1
-target = int(input)
+target = int(input_string)
 while True:
     count = num_presents(house)
     if count > target:

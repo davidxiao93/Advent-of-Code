@@ -1,7 +1,8 @@
-input = """13233401
-6552760"""
+import file_loader
 
-public_keys = [int(x) for x in input.splitlines()]
+input_string = file_loader.get_input()
+
+public_keys = [int(x) for x in input_string.splitlines()]
 
 def transform(subject_number, loop_size):
     result = 1

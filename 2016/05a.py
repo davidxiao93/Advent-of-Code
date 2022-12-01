@@ -1,6 +1,8 @@
 import hashlib
 
-input = """wtnhxymk"""
+import file_loader
+
+input_string = file_loader.get_input()
 
 
 def hash(key, n):
@@ -9,7 +11,7 @@ def hash(key, n):
 index = 0
 password = ""
 while len(password) != 8:
-    h = hash(input, index)
+    h = hash(input_string, index)
     if h.startswith("00000"):
         password += h[5]
     index += 1

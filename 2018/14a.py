@@ -1,5 +1,7 @@
-input = """793061"""
-input = int(input)
+import file_loader
+
+input_string = file_loader.get_input()
+input_string = int(input_string)
 
 
 recipes = [3,7]
@@ -25,10 +27,10 @@ def pretty_print(recipes, elfA, elfB):
 
 
 # pretty_print(recipes, elfA, elfB)
-while len(recipes) < input + 10:
+while len(recipes) < input_string + 10:
     recipes += get_new_recipes(recipes[elfA], recipes[elfB])
     elfA = (elfA + 1 + recipes[elfA]) % len(recipes)
     elfB = (elfB + 1 + recipes[elfB]) % len(recipes)
     # pretty_print(recipes, elfA, elfB)
 
-print("".join(str(i) for i in recipes[input:input + 10]))
+print("".join(str(i) for i in recipes[input_string:input_string + 10]))

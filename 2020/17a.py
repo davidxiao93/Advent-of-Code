@@ -1,15 +1,10 @@
 from typing import Set
 
-input = """..#....#
-##.#..##
-.###....
-#....#.#
-#.######
-##.#....
-#.......
-.#......"""
+import file_loader
 
-# input = """.#.
+input_string = file_loader.get_input()
+
+# input_string = """.#.
 # ..#
 # ###"""
 
@@ -23,8 +18,8 @@ def add_point(p: Point, q: Point):
 
 active_cells = set()
 
-# parse input
-for y, line in enumerate(input.splitlines()):
+# parse input_string
+for y, line in enumerate(input_string.splitlines()):
     for x, c in enumerate(line):
         if c == "#":
             active_cells.add(Point(x, y, 0))

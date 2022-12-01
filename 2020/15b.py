@@ -1,8 +1,10 @@
-input = """19,0,5,1,10,13"""
+import file_loader
+
+input_string = file_loader.get_input()
 target = 30000000 # part 2
 
 
-values = [int(x) for x in input.split(",")]
+values = [int(x) for x in input_string.split(",")]
 
 
 last_number = values[-1]

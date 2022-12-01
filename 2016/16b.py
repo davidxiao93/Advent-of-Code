@@ -1,4 +1,6 @@
-input = """00101000101111010"""
+import file_loader
+
+input_string = file_loader.get_input()
 
 target = 35651584
 
@@ -14,10 +16,10 @@ def checksum(s: str):
     return checksum(result)
 
 
-while len(input) < target:
-    input = dragon(input)
+while len(input_string) < target:
+    input_string = dragon(input_string)
 
-input = input[:target]
+input_string = input_string[:target]
 
-print(checksum(input))
+print(checksum(input_string))
 

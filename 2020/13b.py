@@ -1,10 +1,11 @@
-input = """1003055
-37,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,41,x,x,x,x,x,x,x,x,x,433,x,x,x,x,x,x,x,23,x,x,x,x,x,x,x,x,17,x,19,x,x,x,x,x,x,x,x,x,29,x,593,x,x,x,x,x,x,x,x,x,x,x,x,13"""
+import file_loader
+
+input_string = file_loader.get_input()
 
 
 n = []
 a = []
-for i, v in enumerate(input.splitlines()[1].split(",")):
+for i, v in enumerate(input_string.splitlines()[1].split(",")):
     if v != "x":
         n.append(int(v))
         a.append((-1*i) % int(v))

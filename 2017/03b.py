@@ -1,6 +1,8 @@
-input = """325489"""
+import file_loader
 
-input = int(input)
+input_string = file_loader.get_input()
+
+input_string = int(input_string)
 
 from collections import namedtuple
 
@@ -36,7 +38,7 @@ sum_directions = {up_left, up, up_right, right, down_right, down, down_left, lef
 
 
 
-while grid[current_pos] < input:
+while grid[current_pos] < input_string:
     # pick next point to go to
     possible_next_pos = [add_point(current_pos, t) for t in traverse_directions
                          if add_point(current_pos, t) not in grid]

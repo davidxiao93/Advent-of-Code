@@ -1,6 +1,8 @@
 import hashlib
 
-input = """wtnhxymk"""
+import file_loader
+
+input_string = file_loader.get_input()
 
 
 def hash(key, n):
@@ -10,7 +12,7 @@ index = 0
 password = [''] * 8
 filled = 0
 while filled != 8:
-    h = hash(input, index)
+    h = hash(input_string, index)
     if h.startswith("00000"):
         if h[5].isnumeric() and 0 <= int(h[5]) <= 7 and len(password[int(h[5])]) == 0:
             password[int(h[5])] = h[6]

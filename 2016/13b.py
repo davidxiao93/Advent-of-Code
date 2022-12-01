@@ -4,12 +4,14 @@ from collections import namedtuple
 
 Point = namedtuple("Point", ["x", "y"])
 
-input = """1350"""
-input = int(input)
+import file_loader
+
+input_string = file_loader.get_input()
+input_value = int(input_string)
 start = Point(x=1, y=1)
 target_steps = 50
 
-# input = 10
+# input_string = 10
 # target_steps = 3
 # target = Point(x=7, y=4)
 
@@ -20,7 +22,7 @@ def is_open(p: Point) -> bool:
     if p.x < 0 or p.y < 0:
         r = False
     else:
-        v = p.x*p.x + 3*p.x + 2*p.x*p.y + p.y + p.y*p.y + input
+        v = p.x*p.x + 3*p.x + 2*p.x*p.y + p.y + p.y*p.y + input_value
         r = bin(v).count("1") % 2 == 0
     is_open_map[p] = r
     return r

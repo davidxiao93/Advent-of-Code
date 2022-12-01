@@ -1,6 +1,8 @@
-input = """137826495"""
+import file_loader
 
-cups = [int(x) for x in input]
+input_string = file_loader.get_input()
+
+cups = [int(x) for x in input_string]
 
 class Cup:
     def __init__(self, data, next=None, prev=None):

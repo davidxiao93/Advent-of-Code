@@ -1,5 +1,7 @@
-input = """9005"""
-serial = int(input)
+import file_loader
+
+input_string = file_loader.get_input()
+serial = int(input_string)
 
 grid_size = 300
 

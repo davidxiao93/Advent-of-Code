@@ -1,21 +1,14 @@
-input = """7313511551
-3724855867
-2374331571
-4438213437
-6511566287
-6727245532
-3736868662
-2348138263
-2417483121
-8812617112"""
+import file_loader
+
+input_string = file_loader.get_input()
 
 energy_levels = dict()
-max_y = len(input.splitlines())
-max_x = len(input.splitlines()[0])
+max_y = len(input_string.splitlines())
+max_x = len(input_string.splitlines()[0])
 
 neighbours = {(x, y) for x in range(-1, 2) for y in range(-1, 2)} - {(0,0)}
 
-for y, line in enumerate(input.splitlines()):
+for y, line in enumerate(input_string.splitlines()):
     for x, c in enumerate(line):
         energy_levels[(x, y)] = int(c)
 

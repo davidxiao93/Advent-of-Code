@@ -68,9 +68,17 @@ def get_type(p: Point) -> int:
     type_dict[p] = type
     return type_dict[p]
 
+import file_loader
+
+input_string = file_loader.get_input()
+depth = int(input_string.splitlines()[0].split()[1])
+program = input_string.splitlines()[1:]
+
 start = Point(0, 0)
-target = Point(10, 715)
-depth = 3339
+target = Point(
+    int(input_string.splitlines()[1].split()[1].split(',')[0]),
+    int(input_string.splitlines()[1].split()[1].split(',')[1])
+)
 
 equipments = [TORCH, CLIMBING_GEAR, NEITHER]
 

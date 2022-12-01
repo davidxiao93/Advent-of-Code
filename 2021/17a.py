@@ -1,9 +1,11 @@
 import re
 
-input = """target area: x=57..116, y=-198..-148"""
+import file_loader
+
+input_string = file_loader.get_input()
 
 min_x, max_x, min_y, max_y = [int(a) for a in
-    re.search(r"^target area: x=([-]?\d+)\.\.([-]?\d+), y=([-]?\d+)\.\.([-]?\d+)", input).groups()
+    re.search(r"^target area: x=([-]?\d+)\.\.([-]?\d+), y=([-]?\d+)\.\.([-]?\d+)", input_string).groups()
 ]
 
 """

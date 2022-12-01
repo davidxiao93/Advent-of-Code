@@ -1,5 +1,7 @@
-input = """301"""
-input = int(input)
+import file_loader
+
+input_string = file_loader.get_input()
+input_string = int(input_string)
 
 """
 After playing around with spinlock for a bit, not that the only time the value after 0 is changed
@@ -38,15 +40,15 @@ i = 1
 target = 50000000
 while i <= target:
 
-    zero_index = 1 + ((zero_index - 1 - input) % i)
+    zero_index = 1 + ((zero_index - 1 - input_string) % i)
     # print(i, "\t", zero_index, "----" if i == zero_index else "")
     if i == zero_index:
         after_zero = i
 
     # If our zero index is high, then we can skip ahead
-    if zero_index > 2*input:
-        i += (zero_index // input) - 1
-        zero_index = (zero_index % input) + input
+    if zero_index > 2*input_string:
+        i += (zero_index // input_string) - 1
+        zero_index = (zero_index % input_string) + input_string
         i += 1
     else:
         i += 1

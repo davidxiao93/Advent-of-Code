@@ -1,12 +1,13 @@
 import itertools
 
-input = """Hit Points: 109
-Damage: 8
-Armor: 2"""
+import file_loader
+import math
 
-boss_health = int(input.splitlines()[0].split()[-1])
-boss_attack = int(input.splitlines()[1].split()[-1])
-boss_defend = int(input.splitlines()[2].split()[-1])
+input_string = file_loader.get_input()
+
+boss_health = int(input_string.splitlines()[0].split()[-1])
+boss_attack = int(input_string.splitlines()[1].split()[-1])
+boss_defend = int(input_string.splitlines()[2].split()[-1])
 
 player_health = 100
 player_attack = 0
@@ -26,23 +27,25 @@ def damage(attack, defend):
 
 
 """
-player wins if (k+1)*playerdamagedealt > bosshealth
+player wins if (k+1)*playerdamagedealt >= bosshealth
               and k*bossdamagedealt < player health where k is some number of turns
-(k+1) * damage(player_attack, boss_defent) > 109
-k * damage(boss_attack, player_defend) < 100
+(k+1) * damage(player_attack, boss_defend) >= boss_health
+k * damage(boss_attack, player_defend) < player_health
 
-k < 100 / damage(8, player_defend)
-k > (109 - damage(player_attack, 2)) / damage(player_attack, 2)
+k < player_health / damage(boss_attack, player_defend)
+k >= (boss_health - damage(player_attack, boss_defend)) / damage(player_attack, boss_defend)
 
-(109 - damage(player_attack, 2)) / damage(player_attack, 2) < 100 / damage(8, player_defend) this one seems right?
 
-(109 - damage(player_attack, 2)) * damage(8, player_defend) < 100 * damage(player_attack, 2) this one seems right too
-
+(boss_health - damage(player_attack, boss_defend)) / damage(player_attack, boss_defend) 
+<= 
+some integer k
+< 
+player_health / damage(boss_attack, player_defend)
 """
 
 
 def player_wins(pa, pd, ph=player_health, bh=boss_health, ba=boss_attack, bd=boss_defend):
-    return (bh - damage(pa, bd)) * damage(ba, pd) < ph * damage(pa, bd)
+    return math.ceil((bh / damage(pa, bd)) - 1) < (ph / damage(ba, pd))
 
 weapons = {
     ("Dagger", 8, 4, 0),
@@ -90,7 +93,6 @@ for w in weapon_combinations:
         for r in ring_combinations:
             all_combinations.append(w + a + r)
 
-# print(all_combinations)
 
 lowest_cost = 1000000000000
 winner = []
@@ -108,4 +110,5 @@ for combo in all_combinations:
             lowest_cost = total_cost
             winner = combo
 
+print(winner)
 print(lowest_cost)

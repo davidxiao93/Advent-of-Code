@@ -1,8 +1,9 @@
-input = """Generator A starts with 618
-Generator B starts with 814"""
+import file_loader
 
-inputA = int(input.splitlines()[0].split()[-1])
-inputB = int(input.splitlines()[1].split()[-1])
+input_string = file_loader.get_input()
+
+inputA = int(input_string.splitlines()[0].split()[-1])
+inputB = int(input_string.splitlines()[1].split()[-1])
 
 # inputA = 65
 # inputB = 8921

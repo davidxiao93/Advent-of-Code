@@ -1,10 +1,8 @@
 from typing import Set, Dict
 
-input = """..##.
-..#..
-##...
-#....
-...##"""
+import file_loader
+
+input_string = file_loader.get_input()
 
 from collections import namedtuple
 
@@ -20,7 +18,7 @@ def add_point(p: Point, q: Point):
 
 
 bugs = set()
-for y, row in enumerate(input.splitlines()):
+for y, row in enumerate(input_string.splitlines()):
     for x, c in enumerate(row):
         if c == "#":
             bugs.add(Point(0,x, y))

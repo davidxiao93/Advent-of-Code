@@ -1,4 +1,4 @@
-input = """66: 69 116 | 9 115
+input_string = """66: 69 116 | 9 115
 91: 95 9 | 109 69
 14: 110 69 | 15 9
 4: 119 9 | 61 69
@@ -479,7 +479,7 @@ bbabbbbbababbaabaaaabbbb
 bbbababbbbbbbbbabbbabbbb
 abbbabbbbababbbbabbabbbb"""
 
-# input = """0: 4 1 5
+# input_string = """0: 4 1 5
 # 1: 2 3 | 3 2
 # 2: 4 4 | 5 5
 # 3: 4 5 | 5 4
@@ -495,7 +495,7 @@ abbbabbbbababbbbabbabbbb"""
 from itertools import product
 
 
-rules, messages = input.split("\n\n")
+rules, messages = input_string.split("\n\n")
 
 
 

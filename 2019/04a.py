@@ -1,6 +1,8 @@
-input = """109165-576723"""
-lower_bound = int(input.split("-")[0])
-upper_bound = int(input.split("-")[1])
+import file_loader
+
+input_string = file_loader.get_input()
+lower_bound = int(input_string.split("-")[0])
+upper_bound = int(input_string.split("-")[1])
 
 def is_valid(v):
     if v < lower_bound or v > upper_bound:

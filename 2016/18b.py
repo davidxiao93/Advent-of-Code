@@ -1,4 +1,6 @@
-input = """.^.^..^......^^^^^...^^^...^...^....^^.^...^.^^^^....^...^^.^^^...^^^^.^^.^.^^..^.^^^..^^^^^^.^^^..^"""
+import file_loader
+
+input_string = file_loader.get_input()
 target_rows = 400000
 
 
@@ -6,7 +8,7 @@ SAFE = "."
 TRAP = "^"
 
 rows = [
-    input
+    input_string
 ]
 
 row_cache = {}

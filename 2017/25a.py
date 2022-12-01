@@ -1,67 +1,8 @@
-input = """Begin in state A.
-Perform a diagnostic checksum after 12964419 steps.
+import file_loader
 
-In state A:
-  If the current value is 0:
-    - Write the value 1.
-    - Move one slot to the right.
-    - Continue with state B.
-  If the current value is 1:
-    - Write the value 0.
-    - Move one slot to the right.
-    - Continue with state F.
+input_string = file_loader.get_input()
 
-In state B:
-  If the current value is 0:
-    - Write the value 0.
-    - Move one slot to the left.
-    - Continue with state B.
-  If the current value is 1:
-    - Write the value 1.
-    - Move one slot to the left.
-    - Continue with state C.
-
-In state C:
-  If the current value is 0:
-    - Write the value 1.
-    - Move one slot to the left.
-    - Continue with state D.
-  If the current value is 1:
-    - Write the value 0.
-    - Move one slot to the right.
-    - Continue with state C.
-
-In state D:
-  If the current value is 0:
-    - Write the value 1.
-    - Move one slot to the left.
-    - Continue with state E.
-  If the current value is 1:
-    - Write the value 1.
-    - Move one slot to the right.
-    - Continue with state A.
-
-In state E:
-  If the current value is 0:
-    - Write the value 1.
-    - Move one slot to the left.
-    - Continue with state F.
-  If the current value is 1:
-    - Write the value 0.
-    - Move one slot to the left.
-    - Continue with state D.
-
-In state F:
-  If the current value is 0:
-    - Write the value 1.
-    - Move one slot to the right.
-    - Continue with state A.
-  If the current value is 1:
-    - Write the value 0.
-    - Move one slot to the left.
-    - Continue with state E."""
-
-# input = """Begin in state A.
+# input_string = """Begin in state A.
 # Perform a diagnostic checksum after 6 steps.
 #
 # In state A:
@@ -84,7 +25,7 @@ In state F:
 #     - Move one slot to the right.
 #     - Continue with state A."""
 
-config, *states_strings = input.split("\n\n")
+config, *states_strings = input_string.split("\n\n")
 
 def parse_state(state):
     """

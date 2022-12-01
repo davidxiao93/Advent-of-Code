@@ -1,4 +1,4 @@
-input = """66: 69 116 | 9 115
+input_string = """66: 69 116 | 9 115
 91: 95 9 | 109 69
 14: 110 69 | 15 9
 4: 119 9 | 61 69
@@ -481,8 +481,8 @@ abbbabbbbababbbbabbabbbb"""
 
 from itertools import product
 
-input = input.replace("8: 42", "8: 42 | 42 8").replace("11: 42 31", "11: 42 31 | 42 11 31")
-rules, messages = input.split("\n\n")
+input_string = input_string.replace("8: 42", "8: 42 | 42 8").replace("11: 42 31", "11: 42 31 | 42 11 31")
+rules, messages = input_string.split("\n\n")
 
 unexpanded_rules = {}
 expanded_rules = {}

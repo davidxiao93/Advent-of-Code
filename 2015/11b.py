@@ -1,6 +1,8 @@
 import string
 
-input = """cqjxxyzz"""
+import file_loader
+
+input_string = file_loader.get_input()
 
 
 def has_increasing_digits(l):
@@ -63,7 +65,9 @@ def list_to_string(l):
 
 
 
-l = string_to_list(input)
+l = string_to_list(input_string)
+while not is_valid(l):
+    increment(l)
 l = increment(l)
 while not is_valid(l):
     increment(l)

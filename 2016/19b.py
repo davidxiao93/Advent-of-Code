@@ -1,13 +1,15 @@
-input = """3004953"""
-input = int(input)
+import file_loader
 
-# input = 5
+input_string = file_loader.get_input()
+input_value = int(input_string)
+
+# input_value = 5
 
 import math
 
 elves = []
 
-for i in range(input):
+for i in range(input_value):
     elves.append((i+1, 1))
 
 def reduce_tuple(a, b):

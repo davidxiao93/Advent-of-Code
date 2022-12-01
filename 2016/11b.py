@@ -6,10 +6,9 @@ rules
 -
 
 """
-input = """The first floor contains a polonium generator, a thulium generator, a thulium-compatible microchip, a promethium generator, a ruthenium generator, a ruthenium-compatible microchip, a cobalt generator, and a cobalt-compatible microchip.
-The second floor contains a polonium-compatible microchip and a promethium-compatible microchip.
-The third floor contains nothing relevant.
-The fourth floor contains nothing relevant."""
+import file_loader
+
+input_string = file_loader.get_input()
 
 
 """
@@ -21,7 +20,7 @@ MICROCHIP = "microchip"
 GENERATOR = "generator"
 floors = []
 num_floors = 0
-for i, line in enumerate(input.splitlines()):
+for i, line in enumerate(input_string.splitlines()):
     num_floors += 1
     parts = line.split(" a ")
     for state in parts:

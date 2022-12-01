@@ -1,8 +1,10 @@
-input = """5	1	10	0	1	7	13	14	3	12	8	10	7	12	0	6"""
+import file_loader
 
-# input = """0 2 7 0"""
+input_string = file_loader.get_input()
 
-banks = (int(x) for x in input.split())
+# input_string = """0 2 7 0"""
+
+banks = (int(x) for x in input_string.split())
 
 def redistribute(b):
     bs = list(b)

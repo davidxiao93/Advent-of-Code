@@ -5,9 +5,11 @@ Point = namedtuple("Point", ["x", "y"])
 def add_point(p, q):
     return Point(p.x + q.x, p.y + q.y)
 
-input = """uugsqrei"""
+import file_loader
 
-# input = "flqrgnkx"
+input_string = file_loader.get_input()
+
+# input_string = "flqrgnkx"
 
 
 def shift_left(s, n):
@@ -19,9 +21,9 @@ def reverse(s, n):
     r = r[::-1]
     return r + s[n:]
 
-def build_lengths(input):
+def build_lengths(input_string):
     s = []
-    for c in input:
+    for c in input_string:
         s.append(ord(c))
     s.append(17)
     s.append(31)
@@ -48,8 +50,8 @@ def knot(message: List[int], lengths: List[int], current_pos = 0, skip_size = 0)
     new_message = message[current_pos:] + message[:current_pos]
     return shift_left(new_message, len(message) - original_pos), (original_pos + len(message) - current_pos) % len(message), skip_size
 
-def knot_hash_binary(input):
-    lengths = build_lengths(input)
+def knot_hash_binary(input_string):
+    lengths = build_lengths(input_string)
     message = build_message()
 
     current_pos = 0
@@ -69,7 +71,7 @@ def knot_hash_binary(input):
 
 used = set()
 for y in range(128):
-    for x, c in enumerate(knot_hash_binary(input + "-" + str(y))):
+    for x, c in enumerate(knot_hash_binary(input_string + "-" + str(y))):
         if c == "1":
             used.add(Point(x, y))
 

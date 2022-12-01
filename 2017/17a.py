@@ -1,7 +1,9 @@
-input = """301"""
-input = int(input)
+import file_loader
 
-# input = 3
+input_string = file_loader.get_input()
+input_string = int(input_string)
+
+# input_string = 3
 
 
 
@@ -14,7 +16,7 @@ def spinlock(s, n, q):
     return s
 
 for i in range(1, 2017 + 1):
-    buffer = spinlock(buffer, input, i)
+    buffer = spinlock(buffer, input_string, i)
 
 print(buffer[1])
 

@@ -1,28 +1,6 @@
-input_str = """.#...#.#.##..##....##.#.#
-###.###..##...##.##....##
-....#.###..#...#####..#.#
-.##.######..###.##..#...#
-#..#..#..##..###...#..###
-..####...#.##.#.#.##.####
-#......#..####..###..###.
-#####.##.#.#.##.###.#.#.#
-.#.###....###....##....##
-.......########.#.#...#..
-...###.####.##..###.##..#
-#.#.###.####.###.###.###.
-.######...###.....#......
-....##.###..#.#.###...##.
-#.###..###.#.#.##.#.##.##
-#.#.#..###...###.###.....
-##..##.##...##.##..##.#.#
-.....##......##..#.##...#
-..##.#.###.#...#####.#.##
-....##..#.#.#.#..###.#..#
-###..##.##....##.#....##.
-#..####...####.#.##..#.##
-####.###...####..##.#.#.#
-#.#.#.###.....###.##.###.
-.#...##.#.##..###.#.###.."""
+import file_loader
+
+input_string = file_loader.get_input()
 
 #
 # input_str = """..#
@@ -54,7 +32,7 @@ def get_infected_state(p):
         return infected[p]
     return 0
 
-lines = input_str.splitlines()
+lines = input_string.splitlines()
 initial_grid_size = int((len(lines[0]) - 1)/2)
 for y, r in enumerate(lines):
     for x, c in enumerate(r):
@@ -98,7 +76,7 @@ for i in range(10000000):
     if infected[current_position] == 2:
         infections_caused += 1
     current_position = add_point(current_position, directions[current_direction])
-    # input("Press Enter to continue...")
+    # input_string("Press Enter to continue...")
 
 # pretty_print(infected, current_position, current_direction)
 

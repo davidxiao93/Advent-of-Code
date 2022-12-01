@@ -1,7 +1,8 @@
 from typing import List
 
-input = """192,69,168,160,78,1,166,28,0,83,198,2,254,255,41,12"""
+import file_loader
 
+input_string = file_loader.get_input()
 
 def shift_left(s, n):
     n = n % len(s)
@@ -27,7 +28,7 @@ def knot_hash(message: List[int], lengths: List[int], current_pos, skip_size):
 
 def build_lengths():
     s = []
-    for c in input:
+    for c in input_string:
         s.append(ord(c))
     s.append(17)
     s.append(31)

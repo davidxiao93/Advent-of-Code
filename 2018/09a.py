@@ -1,6 +1,8 @@
-input = """477 players; last marble is worth 70851 points"""
+import file_loader
 
-words = input.split()
+input_string = file_loader.get_input()
+
+words = input_string.split()
 highest_marble = int(words[-2])
 num_players = int(words[0])
 

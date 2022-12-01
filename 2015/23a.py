@@ -1,49 +1,6 @@
-input = """jio a, +16
-inc a
-inc a
-tpl a
-tpl a
-tpl a
-inc a
-inc a
-tpl a
-inc a
-inc a
-tpl a
-tpl a
-tpl a
-inc a
-jmp +23
-tpl a
-inc a
-inc a
-tpl a
-inc a
-inc a
-tpl a
-tpl a
-inc a
-inc a
-tpl a
-inc a
-tpl a
-inc a
-tpl a
-inc a
-inc a
-tpl a
-inc a
-tpl a
-tpl a
-inc a
-jio a, +8
-inc b
-jie a, +4
-tpl a
-inc a
-jmp +2
-hlf a
-jmp -7"""
+import file_loader
+
+input_string = file_loader.get_input()
 
 registers = {
     'a': 0,
@@ -90,7 +47,7 @@ def process(instructions, current_index):
     print("unknown instruction", instruction)
     exit(1)
 
-instructions = input.splitlines()
+instructions = input_string.splitlines()
 
 current_index = 0
 

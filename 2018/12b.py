@@ -1,39 +1,8 @@
-input = """#...#...##..####..##.####.#...#...#.#.#.#......##....#....######.####.##..#..#..##.##..##....#######
+import file_loader
 
-.#### => .
-...#. => .
-.##.. => #
-#.##. => .
-#..## => .
-##### => #
-####. => #
-.##.# => #
-#.### => .
-...## => #
-.#.## => #
-#..#. => #
-#.#.. => #
-.###. => #
-##.## => #
-##..# => .
-.#... => #
-###.# => .
-..##. => .
-..... => .
-###.. => #
-..#.# => .
-.#..# => #
-##... => #
-#.... => .
-##.#. => .
-..#.. => #
-....# => .
-#...# => .
-#.#.# => #
-..### => .
-.#.#. => #"""
+input_string = file_loader.get_input()
 target = 50000000000
-# input = """initial state: #..#.#..##......###...###
+# input_string = """initial state: #..#.#..##......###...###
 #
 # ...## => #
 # ..#.. => #
@@ -50,8 +19,8 @@ target = 50000000000
 # ###.# => #
 # ####. => #"""
 
-initial_state = input.splitlines()[0].split(":", 1)[-1].strip()
-mapping_strings = input.splitlines()[2:]
+initial_state = input_string.splitlines()[0].split(":", 1)[-1].strip()
+mapping_strings = input_string.splitlines()[2:]
 
 pots = set()
 for i, p in enumerate(initial_state):

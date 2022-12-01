@@ -1,9 +1,8 @@
 from typing import List
 
-input = """<x=4, y=1, z=1>
-<x=11, y=-18, z=-1>
-<x=-2, y=-10, z=-4>
-<x=-7, y=-2, z=14>"""
+import file_loader
+
+input_string = file_loader.get_input()
 steps = 1000
 
 
@@ -18,7 +17,7 @@ class Moon:
         self.velocity = Point(0,0,0)
 
 moons: List[Moon] = []
-for line in input.splitlines():
+for line in input_string.splitlines():
     x, y, z = [
         int(x.split("=")[-1]) for x in line[1:-1].split(",")
     ]

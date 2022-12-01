@@ -1,7 +1,9 @@
-input = """To continue, please consult the code grid in the manual.  Enter the code at row 2981, column 3075."""
+import file_loader
 
-target_row = int(input.split()[-3][:-1])
-target_column = int(input.split()[-1][:-1])
+input_string = file_loader.get_input()
+
+target_row = int(input_string.split()[-3][:-1])
+target_column = int(input_string.split()[-1][:-1])
 start = 20151125
 
 def calc_next(n):

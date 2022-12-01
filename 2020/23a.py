@@ -1,6 +1,8 @@
 from typing import List
-input = """137826495"""
-cups = [int(x) for x in input]
+import file_loader
+
+input_string = file_loader.get_input()
+cups = [int(x) for x in input_string]
 
 def do_round(cups: List[int]) -> List[int]:
     # current cup is always at the front

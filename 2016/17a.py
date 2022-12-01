@@ -1,4 +1,6 @@
-input = """vwbaicqe"""
+import file_loader
+
+input_string = file_loader.get_input()
 
 
 import hashlib
@@ -32,7 +34,7 @@ def pop_next(c):
     return return_value, min_key
 
 step_mapping = {
-    0: {(input, current_pos)}
+    0: {(input_string, current_pos)}
 }
 
 is_found = ""
@@ -40,7 +42,7 @@ while not is_found:
     (s, p), steps = pop_next(step_mapping)
 
     if p == target_pos:
-        is_found = s[len(input):]
+        is_found = s[len(input_string):]
 
     if steps + 1 not in step_mapping:
         step_mapping[steps + 1] = set()

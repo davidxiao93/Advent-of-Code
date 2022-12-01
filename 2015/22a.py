@@ -1,16 +1,12 @@
 from collections import namedtuple
 from typing import Optional
 
-input = """Hit Points: 58
-Damage: 9"""
+import file_loader
 
-"""
-Note from future David:
-Be warned that this one can take time. It takes 5 minutes on my laptop.
-"""
+input_string = file_loader.get_input()
 
-boss_health = int(input.splitlines()[0].split()[-1])
-boss_attack =int(input.splitlines()[1].split()[-1])
+boss_health = int(input_string.splitlines()[0].split()[-1])
+boss_attack =int(input_string.splitlines()[1].split()[-1])
 
 player_health = 50
 player_mana = 500

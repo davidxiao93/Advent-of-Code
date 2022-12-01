@@ -1,9 +1,9 @@
 import hashlib
 from typing import Set, Optional
 
-input = """zpqevtbw"""
+import file_loader
 
-# input = """abc"""
+input_string = file_loader.get_input()
 
 md5_cache = {}
 def md5(s: str) -> str:
@@ -14,7 +14,7 @@ def md5(s: str) -> str:
 hash_cache = {}
 def hash(n: int) -> str:
     if n not in hash_cache:
-        h = md5(input + str(n))
+        h = md5(input_string + str(n))
         for i in range(2016):
             h = md5(h)
         hash_cache[n] = h

@@ -1,33 +1,12 @@
 from typing import List, Dict
 
-input = """yb-pi
-jg-ej
-yb-KN
-LD-start
-end-UF
-UF-yb
-yb-xd
-qx-yb
-xd-end
-jg-KN
-start-qx
-start-ej
-qx-LD
-jg-LD
-xd-LD
-ej-qx
-end-KN
-DM-xd
-jg-yb
-ej-LD
-qx-UF
-UF-jg
-qx-jg
-xd-UF"""
+import file_loader
+
+input_string = file_loader.get_input()
 
 neighbours: Dict[str, List[str]] = dict()
 
-for line in input.splitlines():
+for line in input_string.splitlines():
     n1, n2 = line.split("-", 2)
     if n1 not in neighbours:
         neighbours[n1] = []

@@ -1,9 +1,10 @@
-input = """1003055
-37,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,41,x,x,x,x,x,x,x,x,x,433,x,x,x,x,x,x,x,23,x,x,x,x,x,x,x,x,17,x,19,x,x,x,x,x,x,x,x,x,29,x,593,x,x,x,x,x,x,x,x,x,x,x,x,13"""
+import file_loader
+
+input_string = file_loader.get_input()
 
 
-offset = int(input.splitlines()[0])
-buses = [int(x) for x in input.splitlines()[1].split(",") if x != "x"]
+offset = int(input_string.splitlines()[0])
+buses = [int(x) for x in input_string.splitlines()[1].split(",") if x != "x"]
 
 minutes_waited = 1
 while True:

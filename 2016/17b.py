@@ -1,4 +1,6 @@
-input = """vwbaicqe"""
+import file_loader
+
+input_string = file_loader.get_input()
 
 import hashlib
 from collections import namedtuple
@@ -34,7 +36,7 @@ def pop_next(c):
     return return_value, min_key
 
 step_mapping = {
-    0: {(input, current_pos)}
+    0: {(input_string, current_pos)}
 }
 
 max_length = 0
@@ -43,9 +45,9 @@ while next_state != None:
     (s, p), steps = next_state
 
     if p == target_pos:
-        is_found = s[len(input):]
-        if len(s) - len(input) > max_length:
-            max_length = len(s) - len(input)
+        is_found = s[len(input_string):]
+        if len(s) - len(input_string) > max_length:
+            max_length = len(s) - len(input_string)
     else:
         h = md5(s)
         for i in range(4):

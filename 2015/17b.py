@@ -1,15 +1,9 @@
-input = sorted([11, 30, 47, 31, 32, 36, 3, 1, 5, 3, 32, 36, 15, 11, 46, 26, 28, 1, 19, 3])
+import file_loader
+
+input_string = file_loader.get_input()
+
+sorted_input_values = sorted([int(x) for x in input_string.split("\n")])
 target = 150
-
-
-# input = sorted([20,15,10,5,5])
-# target = 25
-
-# input = sorted([3,4,3,5,5])
-# target = 10
-
-# input = [5, 5, 5]
-# target = 10
 
 def deduplicate_input(l):
     mapping = {}
@@ -23,7 +17,7 @@ def deduplicate_input(l):
         mapping[i] += 1
     return new_l
 
-l = deduplicate_input(input)
+l = deduplicate_input(sorted_input_values)
 
 import math
 

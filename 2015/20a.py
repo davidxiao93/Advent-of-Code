@@ -1,4 +1,6 @@
-input = """36000000"""
+import file_loader
+
+input_string = file_loader.get_input()
 
 # number of presents for a house = sum(house number distinct factors including itself and 1) * 10
 
@@ -25,7 +27,7 @@ def sub_lists(my_list):
 
 
 house = 1
-target = int(input)
+target = int(input_string)
 while True:
     count = num_presents(house)
     if count > target:

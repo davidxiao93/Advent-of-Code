@@ -1,16 +1,16 @@
 import hashlib
 from typing import Set, Optional
 
-input = """zpqevtbw"""
+import file_loader
 
-# input = """abc"""
+input_string = file_loader.get_input()
 
 
 
 cache_md5 = {}
 def md5(n: int) -> str:
     if n not in cache_md5:
-        cache_md5[n] = hashlib.md5((input + str(n)).encode('utf-8')).hexdigest()
+        cache_md5[n] = hashlib.md5((input_string + str(n)).encode('utf-8')).hexdigest()
     return cache_md5[n]
 
 

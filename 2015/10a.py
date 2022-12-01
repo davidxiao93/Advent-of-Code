@@ -1,4 +1,6 @@
-input = """3113322113"""
+import file_loader
+
+input_string = file_loader.get_input()
 
 
 def look_say(s):
@@ -19,7 +21,7 @@ def look_say(s):
     output += str(current_count) + current_char
     return output
 
-s = input
+s = input_string
 for i in range(40):
     s = look_say(s)
 
