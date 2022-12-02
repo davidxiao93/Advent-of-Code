@@ -2,7 +2,7 @@ import file_loader
 
 input_string = file_loader.get_input()
 preamble = 25
-target = 26796446 # from part a
+target = 1639024365 # from part a
 
 # input_string = """35
 # 20
